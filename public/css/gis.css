@@ -236,7 +236,7 @@ background-image: -moz-linear-gradient(0deg,rgba(6, 6, 6, 1)20%,rgba(249, 249, 2
 
 .dd-handle:hover {
     color: unset !important;
-    background: #unset !important;
+    background: unset !important;
 }
 
 .dd-handle {
@@ -611,4 +611,17 @@ div #owl-demo {
     width: 100%;
 }
 
+.ol-popup-closer {
+    margin: 10px !important;
+}
+
+.ol-popup-content h3 {
+    margin: -5px 0px 10px 5px !important;
+}
+
+.ol-popup-content a,
+.ol-popup-content a:hover {
+    color: #666 !important;
+    text-decoration: none !important;
+}
 /*rechapta */
