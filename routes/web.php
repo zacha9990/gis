@@ -16,3 +16,4 @@
 // });
 
 Route::get('/', 'GisController@index');
+Route::get('/admin', 'admin\HomeController@index');

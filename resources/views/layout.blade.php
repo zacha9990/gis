@@ -44,10 +44,14 @@
                 <div class="top-left-part">
                     <div class="navbar-brand img" href="#">
                         <input type="checkbox" id="homeFull" value="" name="home-full">
-                        <img src="" alt="icon for gis site">
+                        <img src="{{asset('uploads/images/setting/5ae28cba4d726.jpg')}}" alt="icon for gis site">
                     </div>
                 </div>
-                <div id="title-sbs">{{-- insert site name here --}}</div>
+                <div id="title-sbs">{{"WebGis Master"}}</div>
+                <div class="top-right-part">
+                    <input type="text" name="search" class="form-control input-sm" id="" placeholder="cari di sini...">
+                    <i class="fa fa-search"></i>
+                </div>
             </div>
         </nav>
 
