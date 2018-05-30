@@ -11,13 +11,13 @@ function store(name, val) {
       e.preventDefault();
         var currentStyle = $(this).attr('theme');
         store('theme', currentStyle);
-        $('#theme').attr({href: 'assets/css/colors/'+currentStyle+'.css'})
+        $('#theme').attr({href: 'css/colors/'+currentStyle+'.css'})
     });
 
     var currentTheme = get('theme');
     if(currentTheme)
     {
-      $('#theme').attr({href: 'assets/css/colors/'+currentTheme+'.css'});
+      $('#theme').attr({href: 'css/colors/'+currentTheme+'.css'});
     }
     // color selector
     $('#themecolors').on('click', 'a', function(){
@@ -35,13 +35,13 @@ $(document).ready(function(){
       e.preventDefault();
         var currentStyle = $(this).attr('theme');
         store('theme', currentStyle);
-        $('#theme').attr({href: 'assets/css/colors/'+currentStyle+'.css'})
+        $('#theme').attr({href: 'css/colors/'+currentStyle+'.css'})
     });
 
     var currentTheme = get('theme');
     if(currentTheme)
     {
-      $('#theme').attr({href: 'asseets/css/colors/'+currentTheme+'.css'});
+      $('#theme').attr({href: 'css/colors/'+currentTheme+'.css'});
     }
     // color selector
 $('#themecolors').on('click', 'a', function(){

@@ -1,130 +1,175 @@
 <!DOCTYPE html>
+<!--
+   This is a starter template page. Use this page to start your new project from
+   scratch. This page gets rid of all links and provides the needed markup only.
+   -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="{{ "insert description here" }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('../uploads/images/setting/favicon.png')}}">
-
-  
-
-    {{-- bootstrap core css --}}
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Elite Admin - is a responsive admin template</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="{{asset('admin/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css')}}" rel="stylesheet">
-
-    {{-- menu css --}}
+    <!-- This is Sidebar menu CSS -->
     <link href="{{asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css')}}" rel="stylesheet">
-
-    {{-- vector map css --}}
-    <link rel="stylesheet" href="{{asset('plugins/bower_components/vectormap/jquery-jvectormap-2.0.2.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/bower_components/css-chart/css-chart.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/bower_components/toast-master/css/jquery.toast.css')}}">
-
-    {{-- animation css --}}
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-
-    {{-- custom css --}}
-    <link rel="stylesheet" href="{{asset('css/admin/style.css')}}">
-
-  
-
-    {{-- magnific popup --}}
-    <link rel="stylesheet" href="{{asset('plugins/bower_components/Magnific-Popup-master/dist/magnific-popup.css')}}">
-
-    {{-- select2 css --}}
-    <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">
-
-    {{-- color --}}
-    <link rel="stylesheet" href="{{asset('css/colors/default.css')}}">
-
-    {{-- datatables --}}
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="{{asset('plugins/bower_components/datatables/jquery.dataTables.min.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/jqueryui/jquery-ui.min.css')}}">
-
-    {{-- for map viewer better to load only for view map page --}}
-    <link rel="stylesheet" href="{{asset('plugins/ol4/css/ol.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/ol4/css/layerswitchercontrol.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/ol4/ol3-popup-master/src/ol3-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/ol4/ol3-popup-master/examples/popup.css')}}">
-    <link rel="stylesheet" href="{{asset('plugins/ol4/ol-ext/control/layerswitchercontrol.css')}}">
-
-    {{-- colorpicker --}}
-    <link rel="stylesheet" href="{{asset('plugins/bower_components/jquery-asColorPicker-master/css/asColorPicker.css')}}">
-
-    {{-- jquery-ui --}}
-    <link rel="stylesheet" href="{{asset('plugins/jqueryui/jquery-ui.min.css')}}">
-   
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Roboto');
-        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-        body{
-            font-family: 'Roboto', sans-serif;    
-        }
-
-        .for-notification{
-            font-family: 'Josefin Sans', sans-serif;
-        }
-
-       .tabs-style-iconbox nav ul li.tab-current a {
-            background: DODGERBLUE;
-        }
-
-        .tabs-style-iconbox nav ul li.tab-current a::after {
-            border-top-color: DODGERBLUE;
-        }
-    </style>
-
-<script>
-        (function(i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function() {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); 
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    
-        ga('create', 'UA-19175540-9', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-    <title>WebGis Master</title>
+    <!-- This is a Animation CSS -->
+    <link href="{{asset("admin/css/animate.css")}}" rel="stylesheet">
+    <!-- This is a Custom CSS -->
+    <link href="{{asset('admin/css/style.css')}}" rel="stylesheet">
+    <!-- color CSS you can use different color css from css/colors folder -->
+    <!-- We have chosen the skin-blue (blue.css) for this starter
+         page. However, you can choose any other skin from folder css / colors .
+         -->
+    <link href="{{asset('admin/css/colors/default.css')}}" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
 </head>
-<body>
+
+<body class="fix-sidebar">
+    <!-- Preloader -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+        </svg>
+    </div>
     <div id="wrapper">
+        <!-- Top Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
-            <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-
-                <div class="top-left-part"><a class="logo" href="index.php?page=dashboard"><b><img src="../uploads/images/setting/5aa646b248366.png" alt="home" width="60" heigth="60" /></b><span class="hidden-xs"><img width="160" height="60" src="../uploads/images/setting/5ae2a3c7af333.jpg" alt="home" /></span></a></div>
-
+            <div class="navbar-header">
+                <!-- Toggle icon for mobile view -->
+                <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
+                <!-- Logo -->
+                <div class="top-left-part">
+                    <a class="logo" href="index.html">
+                        <!-- Logo icon image, you can use font-icon also -->
+                        <b><img src="{{asset('uploads/images/setting/5aa646b248366.png')}}" alt="home" width="60" height="60" /></b>
+                        <!-- Logo text image you can use text also -->
+                        <span class="hidden-xs"><img src="../plugins/images/eliteadmin-text.png" alt="home" /></span>
+                    </a>
+                </div>
+                <!-- /Logo -->
+                <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
-                    <li><a href="javascript:void(0)" title="Perkecil Menu" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
-                    
-                </ul>
-                <ul class="nav navbar-top-links navbar-right pull-right">
-
-                    <!-- /.dropdown -->
-
-                    <!-- /.dropdown -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="../uploads/images/users/ae13e225eacc.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">User</b> </a>
-                        <ul class="dropdown-menu dropdown-user scale-up">
-                            <li role="separator" class="divider"></li>
-                            <li><a href="index.php?page=profileUser&id=?>"><i class="ti-settings"></i> Account Setting</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="../index.php?page=logout"><i class="fa fa-power-off"></i> Logout</a></li>
-                        </ul>
-                        <!-- /.dropdown-user -->
+                    <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
+                    <li>
+                        <form role="search" class="app-search hidden-xs">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href=""><i class="fa fa-search"></i></a>
+                        </form>
                     </li>
+                </ul>
+                <!-- This is the message dropdown -->
+                <ul class="nav navbar-top-links navbar-right pull-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
+                            <i class="icon-envelope"></i>
+                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                        </a>
+                        <!-- .dropdown-messages -->
+                        <ul class="dropdown-menu mailbox scale-up">
+                            <li>
+                                <div class="drop-title">You have 4 new messages</div>
+                            </li>
+                            <li>
+                                <div class="message-center">
+                                    <a href="#">
+                                        <div class="user-img"> <img src="../plugins/images/users/pawandeep.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                        <div class="mail-contnet">
+                                            <h5>Pavan kumar</h5>
+                                            <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="text-center" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-messages -->
+                    </li>
+                    <!-- .Task dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#">
+                            <i class="icon-note"></i>
+                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-tasks scale-up">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <div>
+                                        <p> <strong>Task 1</strong> <span class="pull-right text-muted">40% Complete</span> </p>
+                                        <div class="progress progress-striped active">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#"> <strong>See All Tasks</strong> <i class="fa fa-angle-right"></i> </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- /.Task dropdown -->
+                    <!-- .user dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="{{asset('uploads/images/users/5ae13e225eacc.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">Steave</b> </a>
+                        <ul class="dropdown-menu dropdown-user scale-up">
+                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+                            <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                        </ul>
+                        <!-- /.user dropdown-user -->
+                    </li>
+                    <!-- /.user dropdown -->
                     <!-- .Megamenu -->
-
+                    <li class="mega-dropdown">
+                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><span class="hidden-xs">Mega</span> <i class="icon-options-vertical"></i></a>
+                        <ul class="dropdown-menu mega-dropdown-menu animated bounceInDown">
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Header Title</li>
+                                    <li><a href="javascript:void(0)">Link of page</a> </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Header Title</li>
+                                    <li><a href="javascript:void(0)">Link of page</a> </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Header Title</li>
+                                    <li><a href="javascript:void(0)">Link of page</a> </li>
+                                </ul>
+                            </li>
+                            <li class="col-sm-3">
+                                <ul>
+                                    <li class="dropdown-header">Header Title</li>
+                                    <li> <a href="javascript:void(0)">Link of page</a> </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                     <!-- /.Megamenu -->
-
+                    <li class="right-side-toggle"> <a class="waves-effect waves-light" href="javascript:void(0)"><i class="ti-settings"></i></a></li>
                     <!-- /.dropdown -->
                 </ul>
             </div>
@@ -132,129 +177,148 @@
             <!-- /.navbar-top-links -->
             <!-- /.navbar-static-side -->
         </nav>
-
+        <!-- End Top Navigation -->
+        <!-- Left navbar-sidebar -->
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <ul class="nav" id="side-menu">
-
                     <li class="sidebar-search hidden-sm hidden-md hidden-lg">
-                        {{-- input group --}}
+                        <!-- Search input-group this is only view in mobile -->
                         <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="cari...">
-                            <span class="input-group btn:d">
-                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-                            </span>
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+                        </span>
                         </div>
-                        {{-- end input group --}}
+                        <!-- / Search input-group this is only view in mobile-->
                     </li>
-
-                    <li class="nav-small-cap m-t-30">&nbsp;&nbsp;&nbsp;Menu Utama</li>
-
-                    <li>
-                        <a href="{{--controller to dashboard home"--}}" class="waves-effect active">
-                            <i class="zmdi zmdi-view-dashboard zmdi-hc-fw fa-fw"></i><span class="hide-menu">Dashboard</span>
-                            
+                    <!-- User profile-->
+                    <li class="user-pro">
+                        <a href="#" class="waves-effect"><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> Steve Gection<span class="fa arrow"></span></span>
                         </a>
-                    </li>
-
-                    <li>
-                        <a href="javascript:void(0)" class="waves-effect">
-                            <i class="ti-map-alt"></i>
-                            <span class="hide-menu">Data Spasial <span class="fa arrow"></span></span>
-                        </a>
-
                         <ul class="nav nav-second-level">
-                            <li> 
-                                <a href="{{--link to list data spasial--}}"><i class="fa fa-list"></i>&nbsp;List Data Spasial</a> 
-                            </li>
-                            <li> 
-                                <a href="{{--link to data spatial add --}}"><i class="fa fa-plus-square text-info"></i>&nbsp;Tambah Data Spasial</a> 
-                            </li>
-                            <li> <a href="{{-- link to data spatial files --}}" ><i style="color:CRIMSON" class="fa fa-file"></i>&nbsp;File-file data spasial</a> </li>                           
+                            <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
+                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
+                            <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </li>
-
-                    <li> 
-                        <a href="javascript:void(0)" class="waves-effect">
-                            <i class="ti-list"></i> <span class="hide-menu">Kategori<span class="fa arrow"></span></span>
-                        </a>
+                    <!-- User profile-->
+                    <li class="nav-small-cap m-t-10">--- Main Menu</li>
+                    <li><a href="javascript:void(0)" class="waves-effect"><i class="zmdi zmdi-copy zmdi-hc-fw fa-fw"></i> <span class="hide-menu">Link type </span></a> </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect active"><i class="zmdi zmdi-copy zmdi-hc-fw fa-fw"></i> <span class="hide-menu">Dropdown Link<span class="fa arrow"></span><span class="label label-rouded label-purple pull-right">2</span></span></a>
                         <ul class="nav nav-second-level">
-                            <li> 
-                                <a href="{{--link to kategori list --}}"><i class="fa fa-list"></i>&nbsp;List Kategori</a> 
-                            </li>
-                            <li> 
-                                <a href="{{--link to kategori add--}}" class="waves-effect">
-                                    <i class="fa fa-plus-square text-info"></i>&nbsp; Tambah Kategori 
-                                </a> 
-                            </li>
-                            <li> 
-                                <a href="javascript:void(0)" class="waves-effect text-primary">
-                                    Sub Kategori <span class="fa arrow pull-right"></span>
-                                </a>
+                            <li><a href="javascript:void(0)">Link one</a></li>
+                            <li><a href="javascript:void(0)">Link Two</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="waves-effect"><i class="zmdi zmdi-copy zmdi-hc-fw fa-fw"></i> <span class="hide-menu">Multi Dropdown<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+                            <li> <a href="javascript:void(0)">Second Level Item</a> </li>
+                            <li>
+                                <a href="javascript:void(0)" class="waves-effect">Third Level <span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
-                                    <li> 
-                                        <a href="{{--link to subkategori list --}}"><i class="fa fa-list"></i>&nbsp;List Subkategori</a> 
-                                    </li>
-                                    <li> 
-                                        <a href="{{--link to subkategori add--}}">
-                                            <i class="fa fa-plus-square text-info"></i>&nbsp;Tambahkan Subkategori
-                                        </a> 
-                                    </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
+                                    <li> <a href="javascript:void(0)">Third Level Item</a> </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-
-                    <li> 
-                        <a href="javascript:void(0)" class="waves-effect">
-                            <i class="ti-settings"></i> <span class="hide-menu">Setting Site<span class="fa arrow"></span></span>
-                        </a>
-                        <ul class="nav nav-second-level">
-                            <li> <a href="{{--link to general setting --}}">General Setting</a> </li>
-                            <li> <a href="{{--link to Home message --}}">Home Message</a> </li>
-                            <li> <a href="{{--link to ganti logo --}}">Ganti Logo</a>
-                            </li>
-                        </ul>
-                    </li>
-
                 </ul>
             </div>
         </div>
-
-        <div class="page-wrapper">
+        <!-- Left navbar-sidebar end -->
+        <!-- Page Content -->
+        <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row bg-title">
-
+                    <!-- .page title -->
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Starter Page</h4>
+                    </div>
+                    <!-- /.page title -->
+                    <!-- .breadcrumb -->
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <a href="https://themeforest.net/item/elite-admin-responsive-dashboard-web-app-kit-/16750820" target="_blank" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Buy Now</a>
+                        <ol class="breadcrumb">
+                            <li><a href="#">Dashboard</a></li>
+                            <li class="active">Starter Page</li>
+                        </ol>
+                    </div>
+                    <!-- /.breadcrumb -->
                 </div>
+                <!-- .row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="white-box">
+                            <h3 class="box-title">Blank Starter page</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                <!-- .right-sidebar -->
+                <div class="right-sidebar">
+                    <div class="slimscrollright">
+                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+                        <div class="r-panel-body">
+                            <ul class="m-t-20 chatonline">
+                                <li><b>Chat option</b></li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/genu.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/ritesh.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/arijit.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/govinda.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/hritik.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/john.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="../plugins/images/users/pawandeep.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.right-sidebar -->
             </div>
+            <!-- /.container-fluid -->
+            <footer class="footer text-center"> 200 </footer>
         </div>
-
-        </div>
-        
-
-        <!-- jQuery -->
-        <script src="{{asset('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
-        
-        <!-- Bootstrap Core JavaScript -->
-        <script src="{{asset('js/tether.min.js')}}"></script>
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js')}}"></script>
-        
-        <!-- Menu Plugin JavaScript -->
-        <script src="{{asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
-
-    
-    
-        <!--slimscroll JavaScript -->
-        <script src="{{asset('js/jquery.slimscroll.js')}}"></script>
-    
-        
-        <!--Wave Effects -->
-        <script src="{{asset('js/waves.js')}}"></script>
-    
-        <!-- Flot Charts JavaScript -->
-
-        <script src="{{asset('js/custom.min.js')}}"></script>
-        <script src="{{asset('plugins/bower_components/toast-master/js/jquery.toast.js')}}"></script>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="{{asset('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{asset('admin/bootstrap/dist/js/tether.min.js')}}"></script>
+    <script src="{{asset('admin/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js')}}"></script>
+    <!-- Sidebar menu plugin JavaScript -->
+    <script src="{{asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
+    <!--Slimscroll JavaScript For custom scroll-->
+    <script src="{{asset('admin/js/jquery.slimscroll.js')}}"></script>
+    <!--Wave Effects -->
+    <script src="{{asset('admin/js/waves.js')}}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{asset('admin/js/custom.min.js')}}"></script>
 </body>
+
 </html>
